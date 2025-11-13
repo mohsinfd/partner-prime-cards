@@ -1,13 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export const HeroSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative py-20 lg:py-32 overflow-hidden">
+    <section className="relative py-24 lg:py-32 overflow-hidden">
       {/* Geometric Pattern Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-secondary/30 via-background to-background" />
@@ -24,32 +23,18 @@ export const HeroSection = () => {
       </div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Content */}
           <div className="space-y-8">
-            <Badge variant="secondary" className="inline-flex gap-2 items-center py-2 px-4">
-              <Zap className="h-3 w-3" />
-              <span className="text-xs font-medium">New · Whitelabel cards & loans for your brand</span>
-            </Badge>
-
-            <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Launch credit card & loan journeys{" "}
+            <div className="space-y-6">
+              <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+                Credit cards & loans API{" "}
                 <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-                  under your brand
+                  for your brand
                 </span>
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
-                powered by CardGenius
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Today, most partners just show generic offers, static tables or affiliate links - users don't trust them and conversion stays low.
-              </p>
-              <p className="text-lg text-foreground font-medium leading-relaxed">
-                We give you a branded product with a real recommendation engine, full journeys, tracking and incentives built in.
+              <p className="text-xl text-muted-foreground">
+                Live in 2 weeks. ₹0 dev cost.
               </p>
             </div>
 
@@ -57,7 +42,7 @@ export const HeroSection = () => {
               <Button
                 size="lg"
                 onClick={() => navigate("/solutions")}
-                className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg hover:shadow-xl transition-all group font-semibold"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all group font-semibold"
               >
                 Explore Solutions
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -66,113 +51,117 @@ export const HeroSection = () => {
                 variant="outline"
                 size="lg"
                 onClick={() => navigate("/contact")}
-                className="border-2 hover:bg-muted"
+                className="border-2 border-primary/20 hover:bg-primary/5 hover:border-primary/40"
               >
                 Request API access
               </Button>
             </div>
-
-            <p className="text-sm text-muted-foreground">
-              For publishers, fintechs, employers, brokers, creators and more.
-            </p>
           </div>
 
-          {/* Right: Product Visual + Code Snippet */}
-          <div className="relative lg:ml-8 space-y-6">
+          {/* Right: Product Visual */}
+          <div className="relative lg:ml-8">
             {/* Product UI Mockup */}
             <div className="relative bg-card border border-border rounded-2xl shadow-2xl p-6 space-y-6">
               {/* Header */}
               <div className="flex items-center justify-between pb-4 border-b border-border">
-                <div className="flex items-center gap-2">
-                  <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-primary-glow" />
-                  <span className="font-semibold text-foreground">Your Brand</span>
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-primary to-primary-glow" />
+                  <span className="font-semibold text-foreground text-lg">BankKaro Partner Portal</span>
                 </div>
-                <Badge variant="secondary" className="text-xs">
-                  Powered by CardGenius
-                </Badge>
               </div>
 
-              {/* Recommended Cards */}
+              {/* Card Recommendations */}
               <div className="space-y-4">
-                <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
-                  Recommended cards for your users
-                </h3>
-                <div className="space-y-3">
-                  {[
-                    { name: "Premium Cashback Card", savings: "₹24,500", icon: "💳" },
-                    { name: "Travel Rewards Card", savings: "₹18,200", icon: "✈️" },
-                  ].map((card, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-center justify-between p-3 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors"
-                    >
-                      <div className="flex items-center gap-3">
-                        <span className="text-2xl">{card.icon}</span>
-                        <div>
-                          <p className="font-medium text-sm text-foreground">{card.name}</p>
-                          <p className="text-xs text-muted-foreground">Best match</p>
-                        </div>
+                <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Top Recommendations</h3>
+                
+                {/* Card 1 - HDFC Regalia */}
+                <div className="bg-gradient-to-br from-card to-muted/30 border border-border rounded-xl p-4 hover:border-primary/50 transition-all">
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="flex items-center gap-3">
+                      <div className="h-12 w-12 rounded bg-background border border-border flex items-center justify-center">
+                        <span className="text-xs font-bold text-primary">HDFC</span>
                       </div>
-                      <div className="text-right">
-                        <p className="font-bold text-primary text-sm">{card.savings}</p>
-                        <p className="text-xs text-muted-foreground">saved/year</p>
+                      <div>
+                        <div className="font-semibold text-foreground">HDFC Regalia</div>
+                        <div className="text-xs text-muted-foreground">Premium Rewards</div>
                       </div>
                     </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Code Snippet */}
-            <div className="relative">
-              <div className="bg-[hsl(var(--code-bg))] rounded-lg overflow-hidden border border-border/20 shadow-2xl">
-                <div className="flex items-center gap-2 px-4 py-2 border-b border-border/10">
-                  <div className="flex gap-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-destructive/80" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
+                    <div className="bg-primary/20 text-primary px-2 py-1 rounded text-xs font-semibold">
+                      98% Match
+                    </div>
                   </div>
-                  <span className="text-xs text-[hsl(var(--code-comment))] ml-1">Quick Integration</span>
+                  <div className="grid grid-cols-2 gap-3 text-xs">
+                    <div>
+                      <div className="text-muted-foreground">Annual Savings</div>
+                      <div className="font-semibold text-primary">₹18,420</div>
+                    </div>
+                    <div>
+                      <div className="text-muted-foreground">Annual Fee</div>
+                      <div className="font-semibold text-foreground">₹2,500</div>
+                    </div>
+                  </div>
                 </div>
-                <pre className="p-4 text-xs overflow-x-auto">
-                  <code className="text-[hsl(var(--code-text))] font-mono">
-                    <span className="text-[hsl(var(--code-comment))]">// Get recommendations in 3 lines</span>{'\n'}
-                    <span className="text-[hsl(var(--code-keyword))]">const</span> <span className="text-[hsl(var(--code-function))]">cards</span> = <span className="text-[hsl(var(--code-keyword))]">await</span> <span className="text-[hsl(var(--code-function))]">fetch</span>({'\n'}
-                    {'  '}<span className="text-[hsl(var(--code-string))]">'https://api.bankkaro.com/v1/cards'</span>,{'\n'}
-                    {'  '}{'{'} <span className="text-[hsl(var(--code-text))]">spending_profile</span>: {'{'}...{'}'} {'}'}{'\n'}
-                    );{'\n'}
-                    <span className="text-[hsl(var(--code-comment))]">// → Returns ranked cards with savings</span>{'\n'}
-                    <span className="text-[hsl(var(--code-comment))]">// → Response time: &lt;200ms ⚡</span>
-                  </code>
-                </pre>
+
+                {/* Card 2 - Axis Magnus */}
+                <div className="bg-gradient-to-br from-card to-muted/30 border border-border rounded-xl p-4 hover:border-primary/50 transition-all">
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="flex items-center gap-3">
+                      <div className="h-12 w-12 rounded bg-background border border-border flex items-center justify-center">
+                        <span className="text-xs font-bold text-primary">AXIS</span>
+                      </div>
+                      <div>
+                        <div className="font-semibold text-foreground">Axis Magnus</div>
+                        <div className="text-xs text-muted-foreground">Travel & Rewards</div>
+                      </div>
+                    </div>
+                    <div className="bg-primary/20 text-primary px-2 py-1 rounded text-xs font-semibold">
+                      94% Match
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3 text-xs">
+                    <div>
+                      <div className="text-muted-foreground">Annual Savings</div>
+                      <div className="font-semibold text-primary">₹24,150</div>
+                    </div>
+                    <div>
+                      <div className="text-muted-foreground">Annual Fee</div>
+                      <div className="font-semibold text-foreground">₹10,000</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card 3 - SBI Cashback */}
+                <div className="bg-gradient-to-br from-card to-muted/30 border border-border rounded-xl p-4 hover:border-primary/50 transition-all">
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="flex items-center gap-3">
+                      <div className="h-12 w-12 rounded bg-background border border-border flex items-center justify-center">
+                        <span className="text-xs font-bold text-primary">SBI</span>
+                      </div>
+                      <div>
+                        <div className="font-semibold text-foreground">SBI Cashback</div>
+                        <div className="text-xs text-muted-foreground">Online Shopping</div>
+                      </div>
+                    </div>
+                    <div className="bg-primary/20 text-primary px-2 py-1 rounded text-xs font-semibold">
+                      91% Match
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3 text-xs">
+                    <div>
+                      <div className="text-muted-foreground">Annual Savings</div>
+                      <div className="font-semibold text-primary">₹12,890</div>
+                    </div>
+                    <div>
+                      <div className="text-muted-foreground">Annual Fee</div>
+                      <div className="font-semibold text-foreground">₹999</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Decorative Elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/10 rounded-full blur-3xl -z-10" />
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary-glow/10 rounded-full blur-3xl -z-10" />
-          </div>
-        </div>
-
-        {/* Trust Strip - Developer Focused */}
-        <div className="mt-16 pt-8 border-t border-border">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto text-center">
-            <div>
-              <div className="text-2xl font-bold text-primary mb-1">&lt; 200ms</div>
-              <div className="text-xs text-muted-foreground">Avg Response Time</div>
-            </div>
-            <div>
-              <div className="text-2xl font-bold text-primary mb-1">99.9%</div>
-              <div className="text-xs text-muted-foreground">Uptime SLA</div>
-            </div>
-            <div>
-              <div className="text-2xl font-bold text-primary mb-1">RESTful</div>
-              <div className="text-xs text-muted-foreground">JSON API</div>
-            </div>
-            <div>
-              <div className="text-2xl font-bold text-primary mb-1">147</div>
-              <div className="text-xs text-muted-foreground">Bank Products</div>
-            </div>
+            {/* Decorative glow */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-primary-glow/20 rounded-3xl blur-3xl -z-10 opacity-50" />
           </div>
         </div>
       </div>
