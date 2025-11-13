@@ -1,5 +1,8 @@
 import { Header } from "@/components/Header";
 import { PricingSection } from "@/components/sections/PricingSection";
+import { FeatureComparisonTable } from "@/components/sections/FeatureComparisonTable";
+import { BuildVsBuyComparison } from "@/components/sections/BuildVsBuyComparison";
+import { ROICalculatorWidget } from "@/components/sections/ROICalculatorWidget";
 import { Footer } from "@/components/sections/Footer";
 
 const Pricing = () => {
@@ -8,6 +11,9 @@ const Pricing = () => {
       <Header />
       <main className="flex-1">
         <PricingSection />
+        <FeatureComparisonTable />
+        <BuildVsBuyComparison />
+        <ROICalculatorWidget />
       </main>
       <Footer />
     </div>
