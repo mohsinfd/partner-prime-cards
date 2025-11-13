@@ -39,7 +39,7 @@ export const SolutionSection = () => {
             Our solution: a whitelabel stack for cards & loans, powered by CardGenius
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            We give you a ready-made stack for credit cards and loans that you can run under your own brand — with three ways to integrate, depending on how much of the UI you want to own.
+            We give you a ready-made stack for credit cards and loans that you can run under your own brand - with three ways to integrate, depending on how much of the UI you want to own.
           </p>
         </div>
 

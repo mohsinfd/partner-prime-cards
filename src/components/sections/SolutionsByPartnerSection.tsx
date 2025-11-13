@@ -13,7 +13,7 @@ const partnerTypes = [
 
 const partnerData = {
   finance: {
-    problem: "Your readers compare cards and loans with you, but apply somewhere else — and you can't prove you added value.",
+    problem: "Your readers compare cards and loans with you, but apply somewhere else - and you can't prove you added value.",
     solution: "Add CardGenius and LoanGenius so you keep the experience and the revenue.",
     headline: "For personal finance apps, publishers & marketplaces",
     body: "Turn your existing content and tools into high-intent card and loan journeys. Plug our engine into your comparison tables, calculators and credit tools.",
@@ -58,11 +58,11 @@ const partnerData = {
     problem: "You're expected to offer meaningful benefits, but financial products are messy to curate and maintain.",
     solution: "Offer a ready-made, curated credit and loan benefits portal with clear economics and reporting.",
     headline: "Employee benefits portals for credit & loans",
-    body: "Give employees access to curated cards and loans, with clear comparisons and exclusive rewards — all under your company brand.",
+    body: "Give employees access to curated cards and loans, with clear comparisons and exclusive rewards - all under your company brand.",
     useCases: [
       {
         title: "Employee benefits marketplace",
-        description: "Launch a whitelabel portal where employees discover the best cards for everyday spends, travel, fuel, shopping and more — only from vetted partners.",
+        description: "Launch a whitelabel portal where employees discover the best cards for everyday spends, travel, fuel, shopping and more - only from vetted partners.",
       },
       {
         title: "Life event finance journeys",
@@ -104,7 +104,7 @@ const partnerData = {
     problem: "Your audience trusts you, but random finance affiliate links feel one-size-fits-all.",
     solution: "Offer tailored recommendations that actually suit your audience, via a single 'Money tools' page.",
     headline: "For creators, influencers & communities",
-    body: "Turn your audience's financial questions into a revenue stream — with a recommendation engine that does right by them.",
+    body: "Turn your audience's financial questions into a revenue stream - with a recommendation engine that does right by them.",
     useCases: [
       {
         title: "Money tools page for your audience",
@@ -116,7 +116,7 @@ const partnerData = {
       },
       {
         title: "Embed in your existing site/app",
-        description: "Use a lightweight embed or link to our whitelabel portal — no heavy development needed.",
+        description: "Use a lightweight embed or link to our whitelabel portal - no heavy development needed.",
       },
     ],
     bestFit: "Strongly templatized whitelabel, with simple APIs for larger apps.",

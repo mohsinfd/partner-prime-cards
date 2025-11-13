@@ -55,7 +55,7 @@ const stack = [
   {
     icon: Brain,
     title: "Recommendations engine",
-    description: "CardGenius and LoanGenius sort products by real-world value — missed rewards, milestones, fee waivers and redemption value — not just headline offers. Use it via APIs or our ready-made widgets.",
+    description: "CardGenius and LoanGenius sort products by real-world value - missed rewards, milestones, fee waivers and redemption value - not just headline offers. Use it via APIs or our ready-made widgets.",
     features: [
       "Best card/loan for each user or segment",
       "Brand, category and use-case specific views (Amazon, travel, auto, home etc.)",

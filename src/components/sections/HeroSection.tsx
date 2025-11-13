@@ -46,7 +46,7 @@ export const HeroSection = () => {
 
             <div className="space-y-4">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Today, most partners just show generic offers, static tables or affiliate links — users don't trust them and conversion stays low.
+                Today, most partners just show generic offers, static tables or affiliate links - users don't trust them and conversion stays low.
               </p>
               <p className="text-lg text-foreground font-medium leading-relaxed">
                 We give you a branded product with a real recommendation engine, full journeys, tracking and incentives built in.

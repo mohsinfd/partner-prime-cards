@@ -5,7 +5,7 @@ const benefits = [
   {
     icon: Calculator,
     title: "Rupee-accurate recommendations",
-    description: "We model real rewards maths — missed savings, milestone benefits, fee waivers and redemption value — not just headline cashback percentages.",
+    description: "We model real rewards maths - missed savings, milestone benefits, fee waivers and redemption value - not just headline cashback percentages.",
   },
   {
     icon: Eye,

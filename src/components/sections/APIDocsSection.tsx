@@ -37,7 +37,7 @@ export const APIDocsSection = () => {
 
     toast({
       title: "Request received!",
-      description: "Thanks — we'll get back to you with API access details.",
+      description: "Thanks - we'll get back to you with API access details.",
     });
 
     setFormData({
