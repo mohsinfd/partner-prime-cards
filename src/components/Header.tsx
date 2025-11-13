@@ -68,11 +68,11 @@ export const Header = () => {
           {/* CTA Button */}
           <div className="hidden lg:flex">
             <Button
-              variant="hero"
               size="default"
               onClick={() => scrollToSection("#contact")}
+              className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-md hover:shadow-lg transition-all font-semibold"
             >
-              Talk to us
+              Schedule a call
             </Button>
           </div>
 
@@ -99,12 +99,11 @@ export const Header = () => {
                 </button>
               ))}
               <Button
-                variant="hero"
                 size="default"
-                className="w-full"
+                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground shadow-md hover:shadow-lg transition-all font-semibold"
                 onClick={() => scrollToSection("#contact")}
               >
-                Talk to us
+                Schedule a call
               </Button>
             </nav>
           </div>

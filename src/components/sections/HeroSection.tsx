@@ -12,8 +12,20 @@ export const HeroSection = () => {
 
   return (
     <section className="relative py-20 lg:py-32 overflow-hidden">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-secondary via-background to-background -z-10" />
+      {/* Geometric Pattern Background */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-secondary/30 via-background to-background" />
+        <div 
+          className="absolute inset-0 opacity-[0.03]" 
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, hsl(var(--primary)) 1px, transparent 1px),
+              linear-gradient(to bottom, hsl(var(--primary)) 1px, transparent 1px)
+            `,
+            backgroundSize: '80px 80px'
+          }}
+        />
+      </div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -47,20 +59,20 @@ export const HeroSection = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
-                variant="hero"
                 size="lg"
                 onClick={() => scrollToSection("#contact")}
-                className="group"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg hover:shadow-xl transition-all group font-semibold"
               >
-                Talk to us
+                Schedule a free call
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
-                variant="outline-primary"
+                variant="outline"
                 size="lg"
                 onClick={() => scrollToSection("#api-docs")}
+                className="border-2 hover:bg-muted"
               >
-                Request API access
+                Explore APIs
               </Button>
             </div>
 

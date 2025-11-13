@@ -195,9 +195,8 @@ export const ContactSection = () => {
 
               <Button
                 type="submit"
-                variant="hero"
                 size="lg"
-                className="w-full"
+                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg hover:shadow-xl transition-all font-semibold"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Submitting..." : "Schedule a conversation"}

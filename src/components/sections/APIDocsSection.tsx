@@ -86,7 +86,10 @@ export const APIDocsSection = () => {
                 ))}
               </div>
 
-              <Button variant="hero" size="lg" className="w-full sm:w-auto">
+              <Button 
+                size="lg" 
+                className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg hover:shadow-xl transition-all font-semibold"
+              >
                 Request API access
               </Button>
             </div>
@@ -174,7 +177,12 @@ export const APIDocsSection = () => {
                     />
                   </div>
 
-                  <Button type="submit" variant="hero" size="lg" className="w-full" disabled={isSubmitting}>
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="w-full bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg hover:shadow-xl transition-all font-semibold" 
+                    disabled={isSubmitting}
+                  >
                     {isSubmitting ? "Submitting..." : "Request API access"}
                   </Button>
                 </form>
