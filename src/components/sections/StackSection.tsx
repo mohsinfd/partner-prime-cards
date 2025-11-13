@@ -1,5 +1,55 @@
-import { Brain, GitBranch, BarChart3 } from "lucide-react";
+import { useState } from "react";
+import { Brain, GitBranch, BarChart3, Code2 } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { CodeBlock } from "@/components/ui/code-block";
+
+const recommendationSchema = `{
+  "recommendations": [
+    {
+      "card_id": "string",
+      "card_name": "string",
+      "issuer": "string",
+      "match_score": 0.94,
+      "estimated_annual_savings": 24500,
+      "key_benefits": ["string"],
+      "eligibility": {
+        "min_income": 600000,
+        "min_credit_score": 750
+      }
+    }
+  ],
+  "meta": {
+    "computation_time_ms": 142
+  }
+}`;
+
+const applicationSchema = `{
+  "application_id": "app_123456789",
+  "user_id": "usr_984521",
+  "product_id": "hdfc_regalia",
+  "status": "submitted",
+  "tracking_url": "https://...",
+  "estimated_approval_time": "3-5 days"
+}`;
+
+const trackingSchema = `{
+  "applications": [
+    {
+      "application_id": "app_123",
+      "status": "approved",
+      "credit_limit": 500000,
+      "commission": {
+        "amount": 2500,
+        "payout_date": "2025-02-15"
+      }
+    }
+  ],
+  "webhooks": {
+    "events": ["application.approved"]
+  }
+}`;
 
 const stack = [
   {
@@ -11,6 +61,8 @@ const stack = [
       "Brand, category and use-case specific views (Amazon, travel, auto, home etc.)",
       "Works on your catalogue, our catalogue, or a mix",
     ],
+    schema: recommendationSchema,
+    schemaTitle: "Card Recommendation Response"
   },
   {
     icon: GitBranch,
@@ -21,6 +73,8 @@ const stack = [
       "Eligibility checks where available",
       "Lead routing and tagging by partner, channel and campaign",
     ],
+    schema: applicationSchema,
+    schemaTitle: "Application Tracking Response"
   },
   {
     icon: BarChart3,
@@ -31,6 +85,8 @@ const stack = [
       "Nudges and reminders (email/SMS/onsite events)",
       "Cashback, voucher and fee-waiver incentives per partner and per product",
     ],
+    schema: trackingSchema,
+    schemaTitle: "Tracking & Commission Response"
   },
 ];
 
@@ -70,6 +126,24 @@ export const StackSection = () => {
                     </li>
                   ))}
                 </ul>
+
+                {/* View Schema Button */}
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button variant="outline" size="sm" className="w-full mt-4">
+                      <Code2 className="h-4 w-4 mr-2" />
+                      View JSON Schema
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
+                    <DialogHeader>
+                      <DialogTitle>{item.schemaTitle}</DialogTitle>
+                    </DialogHeader>
+                    <div className="mt-4">
+                      <CodeBlock code={item.schema} language="json" showLineNumbers />
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </div>
             </Card>
           ))}

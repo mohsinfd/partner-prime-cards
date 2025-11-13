@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -65,33 +66,96 @@ export const APIDocsSection = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Left: API Features */}
+            {/* Left: API Features with SDK Examples */}
             <div className="space-y-8">
               <div className="space-y-4">
+                <h3 className="text-xl font-bold text-foreground">Available SDKs & Libraries</h3>
                 <p className="text-foreground leading-relaxed">
                   We maintain clean JSON schemas, test environments and sample payloads for quick integration.
                 </p>
               </div>
 
+              {/* SDK Code Examples */}
               <div className="space-y-4">
+                <div className="bg-card border border-border rounded-lg p-4">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-sm font-semibold text-foreground">JavaScript / Node.js</span>
+                    <Badge variant="secondary" className="text-xs">npm install @bankkaro/sdk</Badge>
+                  </div>
+                  <pre className="text-xs bg-[hsl(var(--code-bg))] text-[hsl(var(--code-text))] p-3 rounded overflow-x-auto">
+                    <code className="font-mono">
+                      <span className="text-[hsl(var(--code-keyword))]">import</span> BankKaro <span className="text-[hsl(var(--code-keyword))]">from</span> <span className="text-[hsl(var(--code-string))]">'@bankkaro/sdk'</span>;{'\n\n'}
+                      <span className="text-[hsl(var(--code-keyword))]">const</span> client = <span className="text-[hsl(var(--code-keyword))]">new</span> <span className="text-[hsl(var(--code-function))]">BankKaro</span>({'{'}apiKey{'}'});{'\n'}
+                      <span className="text-[hsl(var(--code-keyword))]">const</span> cards = <span className="text-[hsl(var(--code-keyword))]">await</span> client.cards.<span className="text-[hsl(var(--code-function))]">get</span>();
+                    </code>
+                  </pre>
+                </div>
+
+                <div className="bg-card border border-border rounded-lg p-4">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-sm font-semibold text-foreground">Python</span>
+                    <Badge variant="secondary" className="text-xs">pip install bankkaro</Badge>
+                  </div>
+                  <pre className="text-xs bg-[hsl(var(--code-bg))] text-[hsl(var(--code-text))] p-3 rounded overflow-x-auto">
+                    <code className="font-mono">
+                      <span className="text-[hsl(var(--code-keyword))]">from</span> bankkaro <span className="text-[hsl(var(--code-keyword))]">import</span> BankKaro{'\n\n'}
+                      client = <span className="text-[hsl(var(--code-function))]">BankKaro</span>(api_key=api_key){'\n'}
+                      cards = client.cards.<span className="text-[hsl(var(--code-function))]">get</span>()
+                    </code>
+                  </pre>
+                </div>
+
+                <div className="bg-card border border-border rounded-lg p-4">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-sm font-semibold text-foreground">cURL</span>
+                    <Badge variant="secondary" className="text-xs">Direct HTTP</Badge>
+                  </div>
+                  <pre className="text-xs bg-[hsl(var(--code-bg))] text-[hsl(var(--code-text))] p-3 rounded overflow-x-auto">
+                    <code className="font-mono">
+                      curl -X POST https://api.bankkaro.com/v1/cards \{'\n'}
+                      {'  '}-H <span className="text-[hsl(var(--code-string))]">"Authorization: Bearer bk_live_..."</span>
+                    </code>
+                  </pre>
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <h4 className="font-semibold text-foreground">Core Endpoints</h4>
                 {apiFeatures.map((feature, idx) => (
                   <div key={idx} className="flex items-start gap-4 p-4 rounded-lg bg-secondary/50">
                     <div className="flex-shrink-0 h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
                       <feature.icon className="h-5 w-5 text-primary" />
                     </div>
                     <div className="pt-2">
-                      <p className="text-sm font-medium text-foreground">{feature.label}</p>
+                      <p className="text-sm font-medium text-foreground font-mono">{feature.label}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <Button 
-                size="lg" 
-                className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg hover:shadow-xl transition-all font-semibold"
-              >
-                Request API access
-              </Button>
+              <div className="pt-4 space-y-3">
+                <div className="flex items-start gap-3 text-sm">
+                  <div className="text-primary mt-0.5">⚡</div>
+                  <div>
+                    <span className="font-semibold text-foreground">Test Environment: </span>
+                    <code className="text-xs bg-muted px-2 py-0.5 rounded">api-test.bankkaro.com</code>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 text-sm">
+                  <div className="text-primary mt-0.5">🔒</div>
+                  <div>
+                    <span className="font-semibold text-foreground">Auth: </span>
+                    <span className="text-muted-foreground">Bearer tokens + OAuth 2.0</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 text-sm">
+                  <div className="text-primary mt-0.5">📊</div>
+                  <div>
+                    <span className="font-semibold text-foreground">Rate Limits: </span>
+                    <span className="text-muted-foreground">100-500 req/min (tier-based)</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Right: Access Request Form */}

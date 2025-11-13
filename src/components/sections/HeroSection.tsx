@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Zap, Shield } from "lucide-react";
+import { ArrowRight, Zap } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export const HeroSection = () => {
@@ -77,8 +77,9 @@ export const HeroSection = () => {
             </p>
           </div>
 
-          {/* Right: Product Visual */}
-          <div className="relative lg:ml-8">
+          {/* Right: Product Visual + Code Snippet */}
+          <div className="relative lg:ml-8 space-y-6">
+            {/* Product UI Mockup */}
             <div className="relative bg-card border border-border rounded-2xl shadow-2xl p-6 space-y-6">
               {/* Header */}
               <div className="flex items-center justify-between pb-4 border-b border-border">
@@ -100,7 +101,6 @@ export const HeroSection = () => {
                   {[
                     { name: "Premium Cashback Card", savings: "₹24,500", icon: "💳" },
                     { name: "Travel Rewards Card", savings: "₹18,200", icon: "✈️" },
-                    { name: "Shopping Elite Card", savings: "₹15,800", icon: "🛍️" },
                   ].map((card, idx) => (
                     <div
                       key={idx}
@@ -121,28 +121,30 @@ export const HeroSection = () => {
                   ))}
                 </div>
               </div>
+            </div>
 
-              {/* Application Status */}
-              <div className="space-y-3 pt-4 border-t border-border">
-                <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
-                  Application status
-                </h3>
-                <div className="space-y-2">
-                  {[
-                    { name: "Rahul", product: "Cashback card", status: "Approved", color: "bg-green-500" },
-                    { name: "Meera", product: "Travel card", status: "In review", color: "bg-yellow-500" },
-                    { name: "Karan", product: "Personal loan", status: "Submitted", color: "bg-blue-500" },
-                  ].map((app, idx) => (
-                    <div key={idx} className="flex items-center gap-3 text-sm">
-                      <div className={`h-2 w-2 rounded-full ${app.color}`} />
-                      <span className="text-foreground font-medium">{app.name}</span>
-                      <span className="text-muted-foreground">·</span>
-                      <span className="text-muted-foreground">{app.product}</span>
-                      <span className="text-muted-foreground">·</span>
-                      <span className="text-foreground">{app.status}</span>
-                    </div>
-                  ))}
+            {/* Code Snippet */}
+            <div className="relative">
+              <div className="bg-[hsl(var(--code-bg))] rounded-lg overflow-hidden border border-border/20 shadow-2xl">
+                <div className="flex items-center gap-2 px-4 py-2 border-b border-border/10">
+                  <div className="flex gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-destructive/80" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
+                  </div>
+                  <span className="text-xs text-[hsl(var(--code-comment))] ml-1">Quick Integration</span>
                 </div>
+                <pre className="p-4 text-xs overflow-x-auto">
+                  <code className="text-[hsl(var(--code-text))] font-mono">
+                    <span className="text-[hsl(var(--code-comment))]">// Get recommendations in 3 lines</span>{'\n'}
+                    <span className="text-[hsl(var(--code-keyword))]">const</span> <span className="text-[hsl(var(--code-function))]">cards</span> = <span className="text-[hsl(var(--code-keyword))]">await</span> <span className="text-[hsl(var(--code-function))]">fetch</span>({'\n'}
+                    {'  '}<span className="text-[hsl(var(--code-string))]">'https://api.bankkaro.com/v1/cards'</span>,{'\n'}
+                    {'  '}{'{'} <span className="text-[hsl(var(--code-text))]">spending_profile</span>: {'{'}...{'}'} {'}'}{'\n'}
+                    );{'\n'}
+                    <span className="text-[hsl(var(--code-comment))]">// → Returns ranked cards with savings</span>{'\n'}
+                    <span className="text-[hsl(var(--code-comment))]">// → Response time: &lt;200ms ⚡</span>
+                  </code>
+                </pre>
               </div>
             </div>
 
@@ -152,16 +154,24 @@ export const HeroSection = () => {
           </div>
         </div>
 
-        {/* Trust Strip */}
+        {/* Trust Strip - Developer Focused */}
         <div className="mt-16 pt-8 border-t border-border">
-          <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <Shield className="h-4 w-4 text-primary" />
-              <span>Built on 10+ years of cashback & banking partnerships</span>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto text-center">
+            <div>
+              <div className="text-2xl font-bold text-primary mb-1">&lt; 200ms</div>
+              <div className="text-xs text-muted-foreground">Avg Response Time</div>
             </div>
-            <div className="flex items-center gap-2">
-              <Zap className="h-4 w-4 text-primary" />
-              <span>Millions of users across the BankKaro & CashKaro network</span>
+            <div>
+              <div className="text-2xl font-bold text-primary mb-1">99.9%</div>
+              <div className="text-xs text-muted-foreground">Uptime SLA</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold text-primary mb-1">RESTful</div>
+              <div className="text-xs text-muted-foreground">JSON API</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold text-primary mb-1">147</div>
+              <div className="text-xs text-muted-foreground">Bank Products</div>
             </div>
           </div>
         </div>

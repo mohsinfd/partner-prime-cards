@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import { SolutionSection } from "@/components/sections/SolutionSection";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { StackSection } from "@/components/sections/StackSection";
+import { APIShowcaseSection } from "@/components/sections/APIShowcaseSection";
 import { Footer } from "@/components/sections/Footer";
 
 const HowItWorks = () => {
@@ -12,6 +13,7 @@ const HowItWorks = () => {
         <SolutionSection />
         <StackSection />
         <HowItWorksSection />
+        <APIShowcaseSection />
       </main>
       <Footer />
     </div>
