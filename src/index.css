@@ -30,8 +30,8 @@ All colors MUST be HSL.
     --muted: 220 13% 96%;
     --muted-foreground: 220 9% 46%;
 
-    /* Accent - Yellow/Amber for CTA */
-    --accent: 45 93% 47%;
+    /* Accent - Bright blue for CTA */
+    --accent: 210 100% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -80,7 +80,7 @@ All colors MUST be HSL.
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 45 93% 47%;
+    --accent: 210 100% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 63% 31%;

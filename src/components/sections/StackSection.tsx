@@ -51,8 +51,8 @@ export const StackSection = () => {
           {stack.map((item, idx) => (
             <Card key={idx} className="p-8 bg-card hover:shadow-xl transition-all group">
               <div className="space-y-6">
-                <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <item.icon className="h-8 w-8 text-primary-foreground" />
+                <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-primary/80 to-primary-glow flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <item.icon className="h-8 w-8 text-white" />
                 </div>
 
                 <div className="space-y-3">

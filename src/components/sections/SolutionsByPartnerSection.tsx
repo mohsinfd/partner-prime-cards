@@ -192,8 +192,8 @@ export const SolutionsByPartnerSection = () => {
                   {currentData.useCases.map((useCase, idx) => (
                     <div key={idx} className="space-y-3">
                       <div className="flex items-start gap-3">
-                        <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                          <span className="text-primary-foreground font-bold text-sm">{idx + 1}</span>
+                        <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-primary/80 to-primary-glow flex items-center justify-center">
+                          <span className="text-white font-bold text-sm">{idx + 1}</span>
                         </div>
                         <div className="space-y-2">
                           <h4 className="font-semibold text-foreground">{useCase.title}</h4>

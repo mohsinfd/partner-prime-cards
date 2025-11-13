@@ -39,7 +39,7 @@ export const HeroSection = () => {
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                 Launch credit card & loan journeys{" "}
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
                   under your brand
                 </span>
               </h1>
@@ -87,7 +87,7 @@ export const HeroSection = () => {
               {/* Header */}
               <div className="flex items-center justify-between pb-4 border-b border-border">
                 <div className="flex items-center gap-2">
-                  <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-accent" />
+                  <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-primary-glow" />
                   <span className="font-semibold text-foreground">Your Brand</span>
                 </div>
                 <Badge variant="secondary" className="text-xs">
@@ -152,7 +152,7 @@ export const HeroSection = () => {
 
             {/* Decorative Elements */}
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/10 rounded-full blur-3xl -z-10" />
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-accent/10 rounded-full blur-3xl -z-10" />
+            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary-glow/10 rounded-full blur-3xl -z-10" />
           </div>
         </div>
 

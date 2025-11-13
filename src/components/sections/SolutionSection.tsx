@@ -47,8 +47,8 @@ export const SolutionSection = () => {
           {solutions.map((solution, idx) => (
             <Card key={idx} className="p-8 hover:shadow-xl transition-all bg-card group hover:border-primary/50">
               <div className="space-y-6">
-                <div className="h-14 w-14 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <solution.icon className="h-7 w-7 text-primary-foreground" />
+                <div className="h-14 w-14 rounded-xl bg-gradient-to-br from-primary/80 to-primary-glow flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <solution.icon className="h-7 w-7 text-white" />
                 </div>
                 
                 <div className="space-y-3">

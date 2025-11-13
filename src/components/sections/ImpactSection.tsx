@@ -39,8 +39,8 @@ export const ImpactSection = () => {
               key={idx}
               className="flex flex-col items-center text-center p-6 rounded-2xl bg-card border border-border hover:border-primary/50 hover:shadow-lg transition-all group"
             >
-              <div className="h-14 w-14 rounded-xl bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <metric.icon className="h-7 w-7 text-accent" />
+              <div className="h-14 w-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <metric.icon className="h-7 w-7 text-primary" />
               </div>
               <div className="text-4xl sm:text-5xl font-bold text-foreground mb-2">
                 {metric.value}
