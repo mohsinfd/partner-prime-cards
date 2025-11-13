@@ -1,14 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Zap, Shield } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const HeroSection = () => {
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
+  const navigate = useNavigate();
 
   return (
     <section className="relative py-20 lg:py-32 overflow-hidden">
@@ -60,19 +56,19 @@ export const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                onClick={() => scrollToSection("#contact")}
+                onClick={() => navigate("/solutions")}
                 className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg hover:shadow-xl transition-all group font-semibold"
               >
-                Schedule a free call
+                Explore Solutions
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
                 variant="outline"
                 size="lg"
-                onClick={() => scrollToSection("#api-docs")}
+                onClick={() => navigate("/contact")}
                 className="border-2 hover:bg-muted"
               >
-                Explore APIs
+                Request API access
               </Button>
             </div>
 
