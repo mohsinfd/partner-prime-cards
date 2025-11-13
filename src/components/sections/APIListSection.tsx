@@ -277,44 +277,26 @@ export const APIListSection = () => {
   };
 
   return (
-    <section className="py-24 px-4 relative overflow-hidden">
-      {/* Background decoration */}
+    <section className="py-16 px-4 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
-      <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]" />
       
       <div className="container mx-auto max-w-6xl relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <Badge className="mb-4" variant="secondary">
-            Complete API Reference
-          </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Full API Catalog
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Production-ready APIs covering every aspect of card and loan recommendations,
-            eligibility checks, application tracking, and real-time webhooks.
-          </p>
-        </div>
-
-        {/* Performance metrics */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-          <Card className="p-4 text-center border-primary/20 bg-gradient-to-br from-primary/5 to-transparent">
-            <div className="text-3xl font-bold text-primary mb-1">30+</div>
-            <div className="text-sm text-muted-foreground">API Endpoints</div>
-          </Card>
-          <Card className="p-4 text-center border-accent/20 bg-gradient-to-br from-accent/5 to-transparent">
-            <div className="text-3xl font-bold text-accent mb-1">&lt; 200ms</div>
-            <div className="text-sm text-muted-foreground">Avg Response</div>
-          </Card>
-          <Card className="p-4 text-center border-primary/20 bg-gradient-to-br from-primary/5 to-transparent">
-            <div className="text-3xl font-bold text-primary mb-1">99.9%</div>
-            <div className="text-sm text-muted-foreground">Uptime SLA</div>
-          </Card>
-          <Card className="p-4 text-center border-accent/20 bg-gradient-to-br from-accent/5 to-transparent">
-            <div className="text-3xl font-bold text-accent mb-1">10M+</div>
-            <div className="text-sm text-muted-foreground">API Calls/Month</div>
-          </Card>
+        <div className="mb-12">
+          <div className="flex items-center justify-between mb-6">
+            <div>
+              <h2 className="text-3xl font-bold mb-2">API Reference</h2>
+              <p className="text-muted-foreground">
+                RESTful JSON API • OAuth 2.0 • 30+ Endpoints • &lt;200ms avg
+              </p>
+            </div>
+            <div className="flex gap-3">
+              <Badge variant="secondary">v1.0</Badge>
+              <Badge className="bg-green-500/10 text-green-700 dark:text-green-400 border-green-500/20">
+                Production Ready
+              </Badge>
+            </div>
+          </div>
         </div>
 
         {/* API Categories */}
@@ -359,34 +341,25 @@ export const APIListSection = () => {
                 {/* Endpoints List */}
                 {isExpanded && (
                   <div className="border-t border-border/50 bg-muted/20">
-                    <div className="p-6 space-y-3">
+                    <div className="p-4 space-y-2">
                       {category.endpoints.map((endpoint, index) => (
                         <div
                           key={index}
-                          className="flex items-center justify-between p-4 rounded-lg bg-background border border-border/50 hover:border-primary/30 transition-colors group"
+                          className="flex items-center justify-between p-3 rounded bg-background border border-border/50 hover:border-primary/30 transition-colors"
                         >
-                          <div className="flex items-center gap-4 flex-1">
+                          <div className="flex items-center gap-3 flex-1">
                             <Badge 
                               variant="outline" 
-                              className={`${methodColors[endpoint.method]} font-mono text-xs px-2 min-w-[60px] justify-center`}
+                              className={`${methodColors[endpoint.method]} font-mono text-xs px-2 min-w-[55px] justify-center`}
                             >
                               {endpoint.method}
                             </Badge>
-                            <div className="flex-1">
-                              <code className="text-sm font-mono text-foreground">
-                                {endpoint.path}
-                              </code>
-                              <p className="text-sm text-muted-foreground mt-1">
-                                {endpoint.description}
-                              </p>
-                            </div>
+                            <code className="text-sm font-mono text-foreground">
+                              {endpoint.path}
+                            </code>
                           </div>
-                          <div className="flex items-center gap-4">
-                            <div className="hidden md:flex items-center gap-2 text-sm text-muted-foreground">
-                              <Clock className="w-4 h-4" />
-                              {endpoint.responseTime}
-                            </div>
-                            <CheckCircle2 className="w-5 h-5 text-green-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+                          <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                            <span className="hidden md:inline">{endpoint.responseTime}</span>
                           </div>
                         </div>
                       ))}
@@ -399,20 +372,23 @@ export const APIListSection = () => {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 text-center">
-          <Card className="p-8 border-primary/20 bg-gradient-to-br from-primary/5 via-transparent to-accent/5">
-            <h3 className="text-2xl font-bold mb-4">Ready to integrate?</h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Get API access and start building in minutes. Full documentation, SDKs, and
-              24/7 developer support included.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="shadow-lg hover:shadow-xl transition-shadow">
-                Request API Access
-              </Button>
-              <Button size="lg" variant="outline">
-                View Full Documentation
-              </Button>
+        <div className="mt-12">
+          <Card className="p-6 border-primary/20 bg-gradient-to-br from-primary/5 via-transparent to-accent/5">
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-xl font-bold mb-1">Request API Access</h3>
+                <p className="text-sm text-muted-foreground">
+                  Full documentation, SDKs (JS, Python, PHP), sandbox environment, 24/7 support
+                </p>
+              </div>
+              <div className="flex gap-3">
+                <Button size="lg" className="shadow-lg hover:shadow-xl transition-shadow">
+                  Get API Keys
+                </Button>
+                <Button size="lg" variant="outline">
+                  View Docs
+                </Button>
+              </div>
             </div>
           </Card>
         </div>

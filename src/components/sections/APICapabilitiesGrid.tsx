@@ -18,135 +18,87 @@ import {
 const capabilities = [
   {
     icon: Sparkles,
-    title: "AI-Powered Matching",
-    description: "Machine learning algorithms that continuously improve recommendation accuracy based on real approval data",
-    features: ["ML-based scoring", "Pattern recognition", "Predictive analytics"]
+    title: "ML Recommendation Engine",
+    description: "AI models trained on 10M+ approvals with 94% accuracy",
+    features: ["Ensemble models", "Real-time scoring", "Auto-tuning"]
   },
   {
     icon: Zap,
-    title: "Real-Time Processing",
-    description: "Lightning-fast API responses with edge computing and intelligent caching for optimal performance",
-    features: ["< 200ms response", "Edge distributed", "Auto-scaling"]
+    title: "Edge Performance",
+    description: "Global CDN with intelligent caching, <200ms p95 latency",
+    features: ["Edge compute", "Redis cache", "Auto-scale"]
   },
   {
     icon: Lock,
     title: "Enterprise Security",
-    description: "Bank-grade encryption, OAuth 2.0, and compliance with PCI-DSS and RBI regulations",
-    features: ["256-bit encryption", "OAuth 2.0", "PCI-DSS compliant"]
-  },
-  {
-    icon: RefreshCw,
-    title: "Live Data Sync",
-    description: "Real-time synchronization with bank partners to ensure rates, offers, and eligibility are always current",
-    features: ["Hourly updates", "Webhook events", "Auto-refresh"]
-  },
-  {
-    icon: BarChart3,
-    title: "Advanced Analytics",
-    description: "Comprehensive dashboards with conversion tracking, revenue attribution, and user behavior insights",
-    features: ["Custom reports", "Revenue tracking", "User analytics"]
-  },
-  {
-    icon: Globe,
-    title: "Multi-Channel Support",
-    description: "Single API works across web, mobile apps, WhatsApp, chatbots, and any digital channel",
-    features: ["Platform agnostic", "Responsive design", "Omnichannel"]
-  },
-  {
-    icon: Code2,
-    title: "Developer-First SDK",
-    description: "Native SDKs for JavaScript, Python, PHP with detailed docs, code examples, and sandbox environment",
-    features: ["Multi-language SDKs", "Sandbox testing", "Code examples"]
-  },
-  {
-    icon: Workflow,
-    title: "Smart Routing",
-    description: "Intelligent application routing based on approval probability, commission rates, and processing time",
-    features: ["Auto-routing", "Priority sorting", "Fallback logic"]
+    description: "OAuth 2.0, AES-256 encryption, PCI-DSS + RBI compliant",
+    features: ["SOC 2 Type II", "Vault secrets", "Audit logs"]
   },
   {
     icon: Database,
-    title: "Data Enrichment",
-    description: "Enhance user profiles with credit bureau data, spending patterns, and behavioral signals",
-    features: ["Bureau integration", "Profile building", "Data validation"]
+    title: "Real-Time Data Pipeline",
+    description: "Kafka streams processing 50k events/sec with exactly-once delivery",
+    features: ["Event sourcing", "CQRS pattern", "Change data capture"]
   },
   {
-    icon: Layers,
-    title: "Flexible Integration",
-    description: "RESTful APIs, GraphQL, webhooks, or pre-built widgets - integrate however you prefer",
-    features: ["REST & GraphQL", "Webhooks", "Embeddable widgets"]
+    icon: Workflow,
+    title: "Smart Application Router",
+    description: "Rules engine with approval probability + commission optimization",
+    features: ["A/B testing", "Fallback chains", "Priority queues"]
   },
   {
-    icon: GitBranch,
-    title: "Version Control",
-    description: "API versioning with backward compatibility, deprecation notices, and smooth migration paths",
-    features: ["Semantic versioning", "Breaking changes notice", "Migration guides"]
-  },
-  {
-    icon: Shield,
-    title: "Fraud Prevention",
-    description: "Built-in fraud detection with device fingerprinting, velocity checks, and risk scoring",
-    features: ["Risk scoring", "Device tracking", "Anomaly detection"]
+    icon: BarChart3,
+    title: "Analytics & Attribution",
+    description: "Multi-touch attribution with conversion funnels and cohort analysis",
+    features: ["Event tracking", "Revenue attribution", "Custom dimensions"]
   }
 ];
 
 export const APICapabilitiesGrid = () => {
   return (
-    <section className="py-24 px-4 relative overflow-hidden bg-muted/30">
-      {/* Background decoration */}
+    <section className="py-16 px-4 relative overflow-hidden bg-muted/30">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-accent/5 to-background" />
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
       
-      <div className="container mx-auto max-w-7xl relative z-10">
+      <div className="container mx-auto max-w-6xl relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <Badge className="mb-4" variant="secondary">
-            Platform Capabilities
-          </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Enterprise-Grade Infrastructure
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Built for scale, security, and speed. Every feature you need to deliver
-            world-class card and loan recommendations to your users.
+        <div className="mb-10">
+          <h2 className="text-3xl font-bold mb-2">Technical Infrastructure</h2>
+          <p className="text-muted-foreground">
+            Production-grade architecture built for scale, security, and performance
           </p>
         </div>
 
         {/* Capabilities Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {capabilities.map((capability, index) => {
             const Icon = capability.icon;
             
             return (
               <Card 
                 key={index}
-                className="p-6 border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg group bg-background/50 backdrop-blur-sm"
+                className="p-5 border-border/50 hover:border-primary/30 transition-all group bg-background/50"
               >
-                <div className="mb-4">
-                  <div className="inline-flex p-3 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 group-hover:from-primary/30 group-hover:to-accent/30 transition-colors">
-                    <Icon className="w-6 h-6 text-primary" />
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="p-2 rounded bg-gradient-to-br from-primary/20 to-accent/20">
+                    <Icon className="w-5 h-5 text-primary" />
                   </div>
-                </div>
-                
-                <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
-                  {capability.title}
-                </h3>
-                
-                <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                  {capability.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-2">
-                  {capability.features.map((feature, idx) => (
-                    <Badge 
-                      key={idx} 
-                      variant="secondary" 
-                      className="text-xs bg-muted hover:bg-muted"
-                    >
-                      {feature}
-                    </Badge>
-                  ))}
+                  <div className="flex-1">
+                    <h3 className="font-semibold mb-1">{capability.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      {capability.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {capability.features.map((feature, idx) => (
+                        <Badge 
+                          key={idx} 
+                          variant="secondary" 
+                          className="text-xs font-mono"
+                        >
+                          {feature}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </Card>
             );
@@ -154,22 +106,22 @@ export const APICapabilitiesGrid = () => {
         </div>
 
         {/* Bottom stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="text-center p-6 rounded-lg bg-background/50 backdrop-blur-sm border border-border/50">
-            <div className="text-3xl font-bold text-primary mb-2">147</div>
-            <div className="text-sm text-muted-foreground">Bank Partners</div>
+        <div className="mt-12 grid grid-cols-4 gap-4">
+          <div className="text-center p-4 rounded bg-background/50 border border-border/50">
+            <div className="text-2xl font-bold text-primary">147</div>
+            <div className="text-xs text-muted-foreground">Bank Partners</div>
           </div>
-          <div className="text-center p-6 rounded-lg bg-background/50 backdrop-blur-sm border border-border/50">
-            <div className="text-3xl font-bold text-accent mb-2">500+</div>
-            <div className="text-sm text-muted-foreground">Active Integrations</div>
+          <div className="text-center p-4 rounded bg-background/50 border border-border/50">
+            <div className="text-2xl font-bold text-accent">99.9%</div>
+            <div className="text-xs text-muted-foreground">Uptime SLA</div>
           </div>
-          <div className="text-center p-6 rounded-lg bg-background/50 backdrop-blur-sm border border-border/50">
-            <div className="text-3xl font-bold text-primary mb-2">10M+</div>
-            <div className="text-sm text-muted-foreground">Monthly API Calls</div>
+          <div className="text-center p-4 rounded bg-background/50 border border-border/50">
+            <div className="text-2xl font-bold text-primary">10M+</div>
+            <div className="text-xs text-muted-foreground">API Calls/mo</div>
           </div>
-          <div className="text-center p-6 rounded-lg bg-background/50 backdrop-blur-sm border border-border/50">
-            <div className="text-3xl font-bold text-accent mb-2">24/7</div>
-            <div className="text-sm text-muted-foreground">Developer Support</div>
+          <div className="text-center p-4 rounded bg-background/50 border border-border/50">
+            <div className="text-2xl font-bold text-accent">&lt;200ms</div>
+            <div className="text-xs text-muted-foreground">p95 Latency</div>
           </div>
         </div>
       </div>
