@@ -35,13 +35,11 @@ export const Header = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center">
-              <span className="text-white font-bold text-lg">B</span>
-            </div>
-            <div className="flex flex-col leading-none">
-              <span className="font-bold text-foreground text-sm">BankKaro</span>
-              <span className="text-xs text-muted-foreground">CardGenius for Partners</span>
-            </div>
+            <img 
+              src="/bankkaro-logo.png" 
+              alt="BankKaro" 
+              className="h-8 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
