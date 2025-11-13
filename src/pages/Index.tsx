@@ -10,6 +10,7 @@ import { TestimonialsCarousel } from "@/components/sections/TestimonialsCarousel
 import { MiniCaseStudyCards } from "@/components/sections/MiniCaseStudyCards";
 import { DashboardMockupSection } from "@/components/sections/DashboardMockupSection";
 import { WhoWeWorkWithSection } from "@/components/sections/WhoWeWorkWithSection";
+import { SolutionsLinkSection } from "@/components/sections/SolutionsLinkSection";
 import { Footer } from "@/components/sections/Footer";
 
 const Index = () => {
@@ -28,6 +29,7 @@ const Index = () => {
         <TestimonialsCarousel />
         <DashboardMockupSection />
         <WhoWeWorkWithSection />
+        <SolutionsLinkSection />
       </main>
       <Footer />
     </div>
